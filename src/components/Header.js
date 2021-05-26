@@ -7,7 +7,7 @@ const Header = ( {title}) => {
     const onClick = () => {
         console.log('Click')
     }
-    
+
     return (
         <header className='header'>
             <h1>{title}</h1>
