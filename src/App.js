@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import Header from './components/Header'
 import Cryptos from './components/Cryptos'
-
+import AddCrypto from './components/AddCrypto'
 
 
 function App() {
@@ -31,10 +31,16 @@ function App() {
     setCryptos(cryptos.filter((crypto) => crypto.id !== id) )
   }
 
+  const toggleActive = (id) => {
+    setCryptos(cryptos.map((crypto) => crypto.id == id ? 
+    {...crypto, active: !crypto.active } : crypto ))
+  }
+
   return (
     <div className="container">
       <Header />
-      <Cryptos cryptos={cryptos} onDelete={deleteCrypto} />
+      <Cryptos cryptos={cryptos} onDelete={deleteCrypto} onToggle={toggleActive}  />
+      <AddCrypto/>
     </div>
   );
 }
