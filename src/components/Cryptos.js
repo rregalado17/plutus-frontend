@@ -1,13 +1,13 @@
 import Crypto from './Crypto' 
 
 
-const Cryptos = ( { cryptos }) => {
+const Cryptos = ( { cryptos, onDelete }) => {
     
     
     return (
         <>
             {cryptos.map((crypto) => (
-            <Crypto key={crypto.id} crypto={crypto}/>)
+            <Crypto key={crypto.id} crypto={crypto} onDelete={onDelete}/>)
             ) 
             }
             

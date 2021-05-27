@@ -27,11 +27,14 @@ function App() {
     }
 ])
 
+  const deleteCrypto = (id) => {
+    setCryptos(cryptos.filter((crypto) => crypto.id !== id) )
+  }
 
   return (
     <div className="container">
       <Header />
-      <Cryptos cryptos={cryptos} />
+      <Cryptos cryptos={cryptos} onDelete={deleteCrypto} />
     </div>
   );
 }
