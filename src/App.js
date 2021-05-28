@@ -6,6 +6,8 @@ import AddCrypto from './components/AddCrypto'
 
 function App() {
 
+  const [showAddCrypto, setShowAddCrypto] = useState(false)
+
   const [cryptos, setCryptos] = useState([
     {
         id: 1,
@@ -46,9 +48,9 @@ function App() {
 
   return (
     <div className="container">
-      <Header />
+      <Header onAdd={() => setShowAddCrypto(!showAddCrypto)} showAdd={showAddCrypto}/>
       <Cryptos cryptos={cryptos} onDelete={deleteCrypto} onToggle={toggleActive}  />
-      <AddCrypto onAdd={addCrypto}/>
+      {showAddCrypto && <AddCrypto onAdd={addCrypto}/>}
     </div>
   );
 }
