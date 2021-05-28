@@ -27,6 +27,14 @@ function App() {
     }
 ])
 
+  //Add crypto
+  const addCrypto = (crypto) => {
+    const id = Math.floor(Math.random() * 1000) + 1  
+  
+    const newCrypto = { id, ...crypto }
+      setCryptos([...cryptos, newCrypto])
+  }
+
   const deleteCrypto = (id) => {
     setCryptos(cryptos.filter((crypto) => crypto.id !== id) )
   }
@@ -40,7 +48,7 @@ function App() {
     <div className="container">
       <Header />
       <Cryptos cryptos={cryptos} onDelete={deleteCrypto} onToggle={toggleActive}  />
-      <AddCrypto/>
+      <AddCrypto onAdd={addCrypto}/>
     </div>
   );
 }
