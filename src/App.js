@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import Profile from './components/Profile'
 import Header from './components/Header'
 import Cryptos from './components/Cryptos'
 import AddCrypto from './components/AddCrypto'
@@ -48,6 +49,7 @@ function App() {
 
   return (
     <div className="container">
+      <Profile />
       <Header onAdd={() => setShowAddCrypto(!showAddCrypto)} showAdd={showAddCrypto}/>
       <Cryptos cryptos={cryptos} onDelete={deleteCrypto} onToggle={toggleActive}  />
       {showAddCrypto && <AddCrypto onAdd={addCrypto}/>}
