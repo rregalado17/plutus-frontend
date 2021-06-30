@@ -8,12 +8,10 @@ const Login = ( {onLogin}) => {
 
     const onSubmit = (e) => {
         e.preventDefault()
-
         if (!username) {
             alert('Please enter your username')
             return 
         }
-
         onLogin({ username, password })
             setUsername('')
             setPassword('')
@@ -49,9 +47,7 @@ const Login = ( {onLogin}) => {
                     onChange={(e) => setActive(e.currentTarget.checked)} 
                 />
             </div> */}
-        
             <input type='submit' value='Login to your Account' className='btn btn-block' /> 
-            
         </form>
     )
 }
